@@ -38,3 +38,13 @@ The application will have two separate users:
     -   Manager Editors
 - Editors
 -   Post stories for approval
+
+
+
+### Team Members:
+- Manali Matkar
+- Ed Roberts
+- Drake Ballard
+
+### Trello PM
+https://trello.com/newsroomanchorman/members
