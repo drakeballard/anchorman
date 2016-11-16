@@ -8,7 +8,7 @@ Newsroom Anchorman is an editorial news site that acts as a single point of cont
   - CNBC
   - Washington Post
   - Economist
-  - La/NY Times
+  - LA/NY Times
   - Youtube
   - CNBC
   - BBC
