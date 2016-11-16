@@ -15,7 +15,7 @@ Newsroom Anchorman is an editorial news site that acts as a single point of cont
   - NPR
 
 
-The application will have two separate users:
+## The application will have two separate users:
   - Editor
   - Readers
 
