@@ -25,8 +25,8 @@ Newsroom Anchorman is an editorial news site that acts as a single point of cont
  - Members:
     - Sign-up
     - Create Read List
-     -  View their List
-    -  Sort list based categories and date
+    - View their List
+    - Sort list based categories and date
 -  Non-Members:
     - read the news as they like
 
