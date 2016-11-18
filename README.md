@@ -43,7 +43,7 @@ Newsroom Anchorman is an editorial news site that acts as a single point of cont
 
 ### Team Members:
 - Manali Matkar
-- Ed Roberts
+- Ed Reynolds
 - Drake Ballard
 
 ### Trello PM
