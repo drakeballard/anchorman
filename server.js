@@ -10,6 +10,9 @@ var session = require('express-session');
 var methodOverride = require('method-override'); // for deletes in express
 
 var debug = require('debug')('sburger');
+var news = require('./news.js');
+
+
 
 // Our model controllers 
 var application_controller = require('./controllers/application_controller');
@@ -62,6 +65,11 @@ models.sequelize.sync().then(function () {
     // then save a log of the listening to our debugger.
     debug('Express server listening on port ' + this.address().port);
   });
+});
+
+// Test News API 
+news.getNews('business', function(data){
+  console.log(data);
 });
 
 // catch 404 and forward to error handler
