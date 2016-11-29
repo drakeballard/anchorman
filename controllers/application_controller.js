@@ -4,12 +4,16 @@ var news = require('../news.js');
 var router  = express.Router();
 
 router.get('/', function(req, res) {
+res.render('home');
+});
 
-news.getNews('technology', function(data){
+router.get('/news/:category', function(req,res){
+	var searchCategory = req.params.category;
+
+news.getNews(searchCategory, function(data){
   // console.log(data);
   res.render('articles/articles', {articlesbysource: data});
 });
-
 
 });
 
