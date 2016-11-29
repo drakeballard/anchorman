@@ -26,7 +26,7 @@ module.exports = {
                 articlesArry.push({
             category: category,
             sourceDetails: res.sources[i],
-            articles: result
+            articlesList: result
           });
           if (articlesArry.length === res.sources.length) {
             cb(articlesArry);
