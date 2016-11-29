@@ -51,4 +51,16 @@ module.exports = {
         console.log(err);
     });
   }
+
+  getSourceList: function(category, language, country, cb){
+    news.getSources({
+        category: category,
+        language: language,
+        country: country
+    }).then(function(res){
+        cb(res);
+    }).catch(function(err){
+        console.log(err);
+    });
+  }
 }
