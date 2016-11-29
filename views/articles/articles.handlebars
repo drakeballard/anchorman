@@ -18,14 +18,14 @@
                 {{#each this.articlesList.articles}}
                  <div class="col-md-12 blog-item">                    
                          
-                            <h2><a href="blog-post.html">{{this.title}}</a></h2>
+                            <h2><a href="{{this.url}}">{{this.title}}</a></h2>
                             <hr>
                             <a href="blog-post.html">
-                            <img class="img-responsive img-hover" src="http://placehold.it/900x300" alt="">
+                            <img class="img-responsive img-hover" src="{{this.urlToImage}}" alt="">
                             </a>
                             <hr>
                              <ul class="list-inline">
-                                <li><img src="assets/img/sample-logo.png" class="source-img"></li>
+                                <li><img src="../assets/img/sample-logo.png" class="source-img"></li>
                                 <li><i class="fa fa-user"></i>Author Name </li>
                                 <li><i class="fa fa-calendar"></i>August 28, 2013</li>
                                 <li><i class="fa fa-clock-o"></i>10:00</li>
