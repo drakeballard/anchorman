@@ -1,0 +1,4 @@
+.carousel-inner>.item>a>img, .carousel-inner>.item>img, .img-responsive, .thumbnail a>img, .thumbnail>img {
+    /*Drake style. can be removed!*/
+    margin-bottom: 30px;
+}

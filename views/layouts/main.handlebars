@@ -3,40 +3,42 @@ Here is the main HTML where handlebars will render to
  -->
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-	
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">    
-    <!-- Bootstrap Core CSS -->
-    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link href="/assets/css/modern-business.css" rel="stylesheet">
-    <!-- Animate.css Include -->
-    <link rel="stylesheet" type="text/css" href="/assets/css/animate.css">
-    <!-- Custom Fonts -->
-    <link href="/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    
+
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<!-- Bootstrap Core CSS -->
+	<link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+	<!-- Custom CSS -->
+	<link href="/assets/css/modern-business.css" rel="stylesheet">
+	<!-- Animate.css Include -->
+	<link rel="stylesheet" type="text/css" href="/assets/css/animate.css">
+	<!-- Custom Fonts -->
+	<link href="/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
 	<link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
 	<title>Newsroom Anchorman!</title>
-	</head>
-	<body>
-		{{> pageHeader }}
-		{{{ body }}}
+</head>
 
-     <!-- jQuery -->
-    <script src="/assets/js/jquery.js"></script>
+<body>
+	{{> pageHeader }} {{{ body }}}
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="/assets/js/bootstrap.min.js"></script>
+	<!-- jQuery -->
+	<script src="/assets/js/jquery.js"></script>
 
-    <!-- Script to Activate the Carousel -->
-    <script>
-    $('.carousel').carousel({
-        interval: 5000 //changes the speed
-    })
-    </script>
-	</body>
+	<!-- Bootstrap Core JavaScript -->
+	<script src="/assets/js/bootstrap.min.js"></script>
+
+	<!-- Script to Activate the Carousel -->
+	<script>
+		$('.carousel').carousel({
+			interval: 5000 //changes the speed
+		})
+	</script>
+</body>
+
 </HTML>

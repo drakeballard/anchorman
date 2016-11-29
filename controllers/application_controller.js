@@ -7,8 +7,11 @@ router.get('/', function(req, res) {
 res.render('home');
 });
 
-router.get('/news/:category', function(req,res){
+router.get('/news/:category', function(req,res) {
 	var searchCategory = req.params.category;
+		if (searchCategory == "all"){
+        searchCategory = "";
+    }
 
 news.getNews(searchCategory, function(data){
   // console.log(data);
