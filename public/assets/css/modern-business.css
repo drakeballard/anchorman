@@ -166,7 +166,11 @@ i{
   margin-right: 5px;
 }
 .source-img{
-  vertical-align:middle;
-  width: 30px;
-  height: 30px;
+  vertical-align: middle;  
 }
+.center-align-img {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    padding: 10px;
+ }
