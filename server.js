@@ -10,7 +10,6 @@ var session = require('express-session');
 var methodOverride = require('method-override'); // for deletes in express
 
 var debug = require('debug')('sburger');
-var news = require('./news.js');
 
 
 
@@ -68,9 +67,7 @@ models.sequelize.sync().then(function () {
 });
 
 // Test News API 
-news.getNews('business', function(data){
-  console.log(data);
-});
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
