@@ -39,5 +39,16 @@ module.exports = {
     }).catch(function(err) {
         console.log(err);
     });
+  },
+
+  getNewsBySource: function(source, sortBy, cb){    
+    news.getArticles({
+        source: source,
+        sortBy: sortBy
+    }).then(function(res) {
+        cb(res);
+    }).catch(function(err) {
+        console.log(err);
+    });
   }
 }

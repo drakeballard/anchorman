@@ -17,4 +17,17 @@ news.getNews(searchCategory, function(data){
 
 });
 
+router.get('/news/:source/:sortBy', function(req,res){
+	var bySource = req.params.source;
+	var sortBy = req.params.sortBy;
+
+	console.log("====================INSIDE GETNEWSBYSOURCE ========================="+bySource + sortBy);
+
+	news.getNewsBySource(bySource, sortBy, function(result){
+	  console.log(result);
+	  res.render('articles/articlesBySource', {articlesList: result});
+	});
+
+});
+
 module.exports = router;
