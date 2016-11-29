@@ -20,7 +20,7 @@
                          
                             <h2><a href="{{this.url}}">{{this.title}}</a></h2>
                             <hr>
-                            <a href="blog-post.html">
+                            <a href="{{this.url}}">
                             <img class="img-responsive img-hover center-align-img " src="{{this.urlToImage}}" alt="">
                             </a>
                             <hr>
@@ -48,7 +48,7 @@
                     <div class="well">
                     {{#each articlesbysource}}                        
                          <a href="/news/{{this.sourceDetails.id}}/{{this.sourceDetails.sortBysAvailable.[0]}}">
-                            <img src="{{this.sourceDetails.urlsToLogos.small}}" class="img-responsive center-align-img"> 
+                            <img src="{{this.sourceDetails.urlsToLogos.small}}" class="img-responsive img-hover center-align-img"> 
                          </a>
                          <hr>
                     {{/each}}              
