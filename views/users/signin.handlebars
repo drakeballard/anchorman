@@ -1,13 +1,26 @@
 <!-- this is the sign_in.handlebars file inside the users folder of the views folder
 views/users/sign_in.handlebars -->
-
-<div class="container text-center">
-  <img src="/assets/img/hamburger-icon.png" class="img-burger" width="200" height="200"/>
+ <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Full Width Page
+                    <small>Subheading</small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="index.html">Home</a>
+                    </li>
+                    <li class="active">Full Width Page</li>
+                </ol>
+            </div>
+        </div>
+     <div class="row">
+        <div class="col-sm-6 col-md-8">
+            <div class="row">
+                    <h2>Sign In</h2>
   <hr>
-  <h2>Sign In</h2>
   <div class="row">
     <div class="col-md-12">
-		<form class="create-update-form form-inline" action="/users/login" method="POST">
+		<form class="create-update-form" action="/users/login" method="POST">
 		  <div class="form-group">
 		    <label for="em">Email:</label>
 		    <input type="text" class="form-control" id="em" name="email">
@@ -20,4 +33,39 @@ views/users/sign_in.handlebars -->
 		</form>
 	</div>
   </div>
+
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+            <div class="row">
+                <div class="col-md-12">
+                     {{> categoryGrid}}
+                    {{> countryGrid}}
+                    {{> languageGrid}}                           
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

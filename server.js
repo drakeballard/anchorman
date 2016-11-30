@@ -52,7 +52,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // routs to controller
 app.use('/', application_controller);
 // app.use('/articles', articles_controller);
-// app.use('/users', users_controller);
+app.use('/users', users_controller);
 
 // we bring in the models we exported with index.js
  var models = require("./models");
