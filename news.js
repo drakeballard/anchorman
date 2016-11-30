@@ -41,7 +41,7 @@ module.exports = {
     });
   },
 
-  getNewsBySource: function(source, sortBy, cb){    
+  getNewsBySource: function(source, sortBy, cb){
     news.getArticles({
         source: source,
         sortBy: sortBy
@@ -50,7 +50,7 @@ module.exports = {
     }).catch(function(err) {
         console.log(err);
     });
-  }
+  },
 
   getSourceList: function(category, language, country, cb){
     news.getSources({
