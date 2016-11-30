@@ -1,4 +1,4 @@
-
+<div class="container">
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">Source List
@@ -12,7 +12,7 @@
         <div class="col-sm-6 col-md-8">
             <div class="row">
                 {{#each sourceList.sources}}
-                    <div class="col-md-4 sources-container">
+                    <div class="col-md-6 sources-container">
                         <h3>
                             <a href="/news/{{this.id}}/{{this.sortBysAvailable.[0]}}">{{this.name}}</a>
                         </h3>
@@ -30,3 +30,4 @@
         </div>
 
     </div>
+</div>
