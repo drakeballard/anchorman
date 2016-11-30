@@ -3,22 +3,30 @@
             <div class="col-lg-12">
                 <h1 class="page-header">Source List
                     <small>Subheading</small>
-                </h1>
-                {{> searchGrid }}
-              
+                </h1>       
             </div>
         </div>
 
 
     <div class="row">
-        {{#each sourceList.sources}}
-            <div class="col-md-4 sources-container">
-
-                <h3>
-                    <a href="/news/{{this.id}}/{{this.sortBysAvailable.[0]}}">{{this.name}}</a>
-                </h3>
-                <p>{{this.description}}</p>
+        <div class="col-sm-6 col-md-8">
+            <div class="row">
+                {{#each sourceList.sources}}
+                    <div class="col-md-4 sources-container">
+                        <h3>
+                            <a href="/news/{{this.id}}/{{this.sortBysAvailable.[0]}}">{{this.name}}</a>
+                        </h3>
+                        <p>{{this.description}}</p>
+                    </div>
+                 {{/each}}
             </div>
-         {{/each}}
+        </div>
+         <div class="col-sm-6 col-md-4">
+            <div class="row">
+                <div class="col-md-12">
+                {{> searchGrid }}
+                </div>
+            </div>
+        </div>
 
     </div>
