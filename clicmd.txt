@@ -1,0 +1,3 @@
+sequelize model:create --name Article --attributes "userId:string, sourceId:string, author:string, title:string, description:string, articleUrl:string, articleImageUrl:string, publishedAt:string"
+
+sequelize model:create --name User --attributes "userName:string, email:string, pwdHash:string"
