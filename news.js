@@ -10,7 +10,6 @@ var news = new NewsApi({
 module.exports = {
   getNews: function(category, cb) {
     var articlesArry = [];
-
     news.getSources({
         category: category,
         language: 'en',
