@@ -20,7 +20,10 @@ router.get('/news/:category', function(req,res) {
 
 	news.getNews(searchCategory, function(data){
 	  // console.log(data);
-	  res.render('articles/articles', {articlesbysource: data});
+	  res.render('articles/articles', {
+	  	articlesbysource: data,
+	  	logged_in : req.session.logged_in
+	  });
 	});
 
 });

@@ -7,8 +7,13 @@ router.get('/new', function(req,res) {
   res.render('users/newuser');
 });
 
-router.get('/sign-in', function(req,res) {	
-  res.render('users/signin');
+router.get('/sign-in', function(req,res) {
+  if(req.session.logged_in == true){
+  	res.redirect('/articles')
+  }else{
+  	res.render('users/signin');
+  }
+  
 });
 
 router.get('/sign-out', function(req,res) {
