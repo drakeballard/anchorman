@@ -4,10 +4,10 @@ var express = require('express');
 var router  = express.Router();
 
 router.get('/new', function(req,res) {
-  res.render('users/new');
+  res.render('users/newuser');
 });
 
-router.get('/sign-in', function(req,res) {
+router.get('/sign-in', function(req,res) {	
   res.render('users/signin');
 });
 
