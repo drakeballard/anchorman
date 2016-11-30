@@ -35,7 +35,10 @@ router.get('/news/:source/:sortBy', function(req,res){
 
 });
 
-router.get('news/:category/:language/:country', function(req,res){
+router.get('/news/:category/:language/:country', function(req,res){
+
+	console.log("====================INSIDE getSourceList =========================");
+
 	var category = req.params.category;
 	var language = req.params.language;
 	var country = req.params.country;
@@ -50,12 +53,9 @@ router.get('news/:category/:language/:country', function(req,res){
 	}
 
 	news.getSourceList(category, language, country, function(result){
-		console.log(res);
+		console.log(result);
 		res.render('sources/sourceList', {sourceList: result});
 	});
-
-
-
 });
 
 module.exports = router;
