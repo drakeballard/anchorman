@@ -6,6 +6,10 @@ var router  = express.Router();
 router.get('/', function(req, res) {
 res.render('home');
 });
+router.get('/news', function(req, res) {
+res.render('articles/articlesByCategory');
+});
+
 
 router.get('/news/:category', function(req,res) {
 
