@@ -28,7 +28,7 @@ var app = express();
 app.use(methodOverride('_method'))
 
 //allow sessions
-app.use(session({ secret: 'app', resave: true, saveUninitialized: true, cookie: { maxAge: 60000 } }));
+app.use(session({ secret: 'app', resave: true, saveUninitialized: true, cookie: { maxAge: 6000000 } }));
 app.use(cookieParser());
 
 // view engine setup
@@ -51,7 +51,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // routs to controller
 app.use('/', application_controller);
-// app.use('/articles', articles_controller);
+app.use('/articles', articles_controller);
 app.use('/users', users_controller);
 
 // we bring in the models we exported with index.js

@@ -1,16 +1,24 @@
-<h1>Test Server</h1>
- <div class="row">
+
+ {{#unless logged_in}}
+<h1>You are not logged in</h1>
+ {{/unless}}
+
+  {{#if logged_in}}
+	<h1>You are not logged in as {{username}} email : {{email}}</h1>
+  {{/if}}
+
+{{!--  <div class="row">
     <div class="col-sm-6 col-md-8">
         <div class="row">
 
-{{!-- Insert template to display list of articles created by the user if the user is loggedin
+ Insert template to display list of articles created by the user if the user is loggedin
 
 else display form to sign in
---}}
+
         </div>
     </div>
     <div class="col-sm-6 col-md-4">
         <div class="row">
         </div>
     </div>
-</div>
+</div> --}}

@@ -13,7 +13,7 @@ router.get('/sign-in', function(req,res) {
 
 router.get('/sign-out', function(req,res) {
   req.session.destroy(function(err) {
-     res.redirect('/')
+     res.redirect('/articles')
   })
 });
 
@@ -50,7 +50,7 @@ router.post('/login', function(req, res) {
         // and the user's email.
         req.session.user_email = user.email;
 
-        res.redirect('/');
+        res.redirect('/articles');
       }
       // if the result is anything but true (password invalid)
       else{
@@ -104,7 +104,7 @@ router.post('/create', function(req,res) {
             req.session.user_email = user.email;
 
             // redirect to home on login
-            res.redirect('/')
+            res.redirect('/articles')
           })
         })
       })
