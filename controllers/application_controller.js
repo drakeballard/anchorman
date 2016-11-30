@@ -26,10 +26,10 @@ router.get('/news/:source/:sortBy', function(req,res){
 	var bySource = req.params.source;
 	var sortBy = req.params.sortBy;
 
-	console.log("====================INSIDE GETNEWSBYSOURCE ========================="+bySource + sortBy);
+	// console.log("====================INSIDE GETNEWSBYSOURCE ========================="+bySource + sortBy);
 
 	news.getNewsBySource(bySource, sortBy, function(result){
-	  // console.log(result);
+	  console.log(result);
 	  res.render('articles/articlesBySource', {articlesList: result});
 	});
 
@@ -37,7 +37,7 @@ router.get('/news/:source/:sortBy', function(req,res){
 
 router.get('/news/:category/:language/:country', function(req,res){
 
-	console.log("====================INSIDE getSourceList =========================");
+	// console.log("====================INSIDE getSourceList =========================");
 
 	var category = req.params.category;
 	var language = req.params.language;
@@ -53,7 +53,7 @@ router.get('/news/:category/:language/:country', function(req,res){
 	}
 
 	news.getSourceList(category, language, country, function(result){
-		console.log(result);
+		// console.log(result);
 		res.render('sources/sourceList', {sourceList: result});
 	});
 });

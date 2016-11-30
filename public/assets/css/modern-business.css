@@ -179,8 +179,14 @@ i{
  }
 
  .sources-container{
-    text-align: center;
+    text-align: justify;
     height: 150px;
     margin-top: 10px;
     margin-bottom: 10px;
+}
+.heading{
+  font-size: 60px;
+  padding: 20px;
+  margin: 40px auto;
+
 }
