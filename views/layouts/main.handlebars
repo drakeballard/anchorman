@@ -25,7 +25,10 @@ Here is the main HTML where handlebars will render to
 </head>
 
 <body>
-	{{> pageHeader }} {{{ body }}}
+	{{> pageHeader }}
+	<div class="container">
+	{{{ body }}}
+	</div>
 
 	<!-- jQuery -->
 	<script src="/assets/js/jquery.js"></script>

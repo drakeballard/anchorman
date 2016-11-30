@@ -50,7 +50,7 @@ module.exports = {
     }).catch(function(err) {
         console.log(err);
     });
-  }
+  },
 
   getSourceList: function(category, language, country, cb){
     news.getSources({
