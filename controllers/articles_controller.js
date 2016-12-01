@@ -29,7 +29,7 @@ router.post('/create', function (req, res) {
   // use the Cat model to create a cat based on what's
   // passed in req.body (name, sleepy, user_id)
   models.Article.create({
-    userId: req.session.userName,
+    userId: req.session.username,
     sourceId: req.body.articleSource,
     author: req.body.articleAuthor,
     title: req.body.articleTitle,
