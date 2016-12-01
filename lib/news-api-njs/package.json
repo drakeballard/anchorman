@@ -1,0 +1,57 @@
+{
+  "name": "news-api-njs",
+  "version": "0.2.1",
+  "description": "A Node app that hooks into newsapi.org",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChrisW-B/news-api.git"
+  },
+  "keywords": [
+    "news",
+    "newsapi.org"
+  ],
+  "author": {
+    "name": "Chris Barry",
+    "email": "me@chrisb.xyz"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChrisW-B/news-api/issues"
+  },
+  "homepage": "https://github.com/ChrisW-B/news-api#readme",
+  "dependencies": {
+    "request": "^2.75.0",
+    "request-promise-native": "^1.0.3"
+  },
+  "gitHead": "293ac82ef814786fd4ddf350d1b6044785aa59f3",
+  "_id": "news-api-njs@0.2.1",
+  "_shasum": "32986fc9109351468a3fd00ff70affc617b30666",
+  "_from": "news-api-njs@latest",
+  "_npmVersion": "3.10.7",
+  "_nodeVersion": "6.7.0",
+  "_npmUser": {
+    "name": "chrisw_b",
+    "email": "me@chrisb.xyz"
+  },
+  "dist": {
+    "shasum": "32986fc9109351468a3fd00ff70affc617b30666",
+    "tarball": "https://registry.npmjs.org/news-api-njs/-/news-api-njs-0.2.1.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "chrisw_b",
+      "email": "me@chrisb.xyz"
+    }
+  ],
+  "_npmOperationalInternal": {
+    "host": "packages-16-east.internal.npmjs.com",
+    "tmp": "tmp/news-api-njs-0.2.1.tgz_1475856118768_0.052170956041663885"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/news-api-njs/-/news-api-njs-0.2.1.tgz",
+  "readme": "ERROR: No README data found!"
+}

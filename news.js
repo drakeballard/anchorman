@@ -1,6 +1,6 @@
 'use strict'
 
-var NewsApi = require('news-api-njs'),
+var NewsApi = require('./lib/news-api-njs'),
     config = require('./config/config.json');
 var news = new NewsApi({
     apiKey: config.apiKey

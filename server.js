@@ -9,7 +9,7 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 var methodOverride = require('method-override'); // for deletes in express
 
-var debug = require('debug')('sburger');
+var debug = require('debug')('anchorman');
 
 
 
