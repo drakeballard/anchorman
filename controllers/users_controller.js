@@ -18,7 +18,7 @@ router.get('/sign-in', function(req,res) {
 
 router.get('/sign-out', function(req,res) {
   req.session.destroy(function(err) {
-     res.redirect('/articles')
+     res.redirect('/news/all')
   })
 });
 
@@ -55,7 +55,7 @@ router.post('/login', function(req, res) {
         // and the user's email.
         req.session.user_email = user.email;
 
-        res.redirect('/articles');
+        res.redirect('/news/all');
       }
       // if the result is anything but true (password invalid)
       else{

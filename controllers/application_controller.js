@@ -15,8 +15,11 @@ router.get('/news/:category', function(req,res) {
 
 	var searchCategory = req.params.category;
     var logged_in = req.session.logged_in;
+    var userName = req.session.username;
+    var user_id = req.session.user_id;
+    var userEmail = req.session.user_email;
 
-		if (searchCategory == "all"){
+	if (searchCategory == "all"){
         searchCategory = "";
     }
     console.log("LOGGED IN VAL============================================== "+ logged_in);
@@ -24,7 +27,10 @@ router.get('/news/:category', function(req,res) {
 	news.getNews(searchCategory, function(data){	  
 	  res.render('articles/articles', {
 	  	articlesbysource: data,
-	  	logged_in: logged_in
+	  	logged_in: logged_in,
+	  	userName: userName,
+	  	user_id: user_id,
+	  	email: userEmail
 	  });
 	});
 
