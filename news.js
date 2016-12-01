@@ -23,7 +23,7 @@ module.exports = {
                 sortBy: res.sources[i].sortBysAvailable[0]
             }).then(function(result) {
                 articlesArry.push({
-            category: category,
+            category: category.toUpperCase(),
             sourceDetails: res.sources[i],
             articlesList: result
           });

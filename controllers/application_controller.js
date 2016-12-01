@@ -41,11 +41,22 @@ router.get('/news/:source/:sortBy', function(req,res){
 	var bySource = req.params.source;
 	var sortBy = req.params.sortBy;
 
+	var logged_in = req.session.logged_in;
+    var userName = req.session.username;
+    var user_id = req.session.user_id;
+    var userEmail = req.session.user_email;
+
 	// console.log("====================INSIDE GETNEWSBYSOURCE ========================="+bySource + sortBy);
 
 	news.getNewsBySource(bySource, sortBy, function(result){
 	  console.log(result);
-	  res.render('articles/articlesBySource', {articlesList: result});
+	  res.render('articles/articlesBySource', {
+	  	articlesList: result,
+	  	logged_in: logged_in,
+	  	userName: userName,
+	  	user_id: user_id,
+	  	email: userEmail
+	  });
 	});
 
 });

@@ -22,12 +22,15 @@ models.Article.findAll({
 
 router.post('/create', function (req, res) {
 
-	console.log("REquest data inside article create=================="+ req.body);
+console.log("---------------------------------INSIDE CREATE----------------------"+req.body.articleSource)
+// console.log("-------------------------------------------------------"+req.body.articleAuthor)
+// console.log("-------------------------------------------------------"+req.body.articleTitle)
+// console.log("-------------------------------------------------------"+req.body.articleDescription)
+// console.log("-------------------------------------------------------"+req.body.articleUrl)
+// console.log("-------------------------------------------------------"+req.body.articleImageUrl)
+// console.log("-------------------------------------------------------"+req.body.articlePublishedAt)  
+
   
-  // SOLUTION:
-  // =========
-  // use the Cat model to create a cat based on what's
-  // passed in req.body (name, sleepy, user_id)
   models.Article.create({
     userId: req.session.username,
     sourceId: req.body.articleSource,
