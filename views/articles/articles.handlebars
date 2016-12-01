@@ -1,104 +1,94 @@
- <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header">
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
                     Top News
                 </h1>
-                <ol class="breadcrumb">
-                    <li><a href="/news/all">News Search </a>
-                    </li>
-                    <li class="active">{{articlesbysource.[0].category}}</li>
-                </ol>
-            </div>
+            <ol class="breadcrumb">
+                <li><a href="/news/all">News Search </a>
+                </li>
+                <li class="active">{{articlesbysource.[0].category}}</li>
+            </ol>
         </div>
-     <div class="row">
+    </div>
+    <div class="row">
         <div class="col-sm-6 col-md-8">
             <div class="row">
-            {{#each articlesbysource}}
-                {{#each this.articlesList.articles}}
-                 <div class="col-md-12 blog-item">                    
-                         
+                {{#each articlesbysource}}
+                    {{#each this.articlesList.articles}}
+                        <div class="col-md-12 blog-item">
+
                             <h2><a href="{{this.url}}">{{this.title}}</a></h2>
                             <hr>
                             <a href="{{this.url}}">
-                            <img class="img-responsive img-hover center-align-img " src="{{this.urlToImage}}" alt="">
+                                <img class="img-responsive img-hover center-align-img " src="{{this.urlToImage}}" alt="">
                             </a>
                             <hr>
-                             <ul class="list-inline">
-                               {{!--  <li><img src="{{../sourceDetails.urlsToLogos.small}}" class="source-img"></li> --}}
+                            <ul class="list-inline">
+                                {{!--  <li><img src="{{../sourceDetails.urlsToLogos.small}}
+                                " class=" source-img "></li> --}}
                                <li><strong>{{../sourceDetails.name}}</strong></li>
-                                <li><i class="fa fa-user"></i>{{this.author}}</li>
-                                <li><i class="fa fa-calendar"></i>{{this.publishedAt}}</li>
+                                <li><i class="fa fa-user "></i>{{this.author}}</li>
+                                <li><i class="fa fa-calendar "></i>{{this.publishedAt}}</li>
                                 {{!-- <li><i class="fa fa-clock-o"></i>10:00</li> --}}
-                                
+
                             </ul>
                             <hr>
                             <p>{{this.description}}</p>
-                            <div class="form-inline">
-                                <a class="btn btn-primary" href="{{this.url}}"> Read More <i class="fa fa-angle-right"></i></a>
-                                 {{#unless ../../logged_in}}
-                                    <a href="/users/sign-in" class="btn btn-primary" data-toggle="tooltip" title="Sign In Or Sign Up First To">Add To Read List!</a>
-                                 {{/unless}}  
+                            <div class="form-inline ">
+                                <a class="btn btn-primary " href="{{this.url}}"> Read More <i class="fa fa-angle-right"></i></a>
+                                    {{#unless ../../logged_in}}
+                                        <a href="/users/sign-in" class="btn btn-primary" data-toggle="tooltip" title="Sign In Or Sign Up First To">Add To Read List!</a>
+                                    {{/unless}}
 
-                             {{#if ../../logged_in}} 
-                                <form class="form-inline" style="display:inline;" action="/articles/create" method="POST">                               
-                                    <input type="hidden" name="articleTitle" value="{{this.title}}">
-                                    <input type="hidden" name="articleAuthor" value="{{this.author}}">
-                                    <input type="hidden" name="articlePublishedAt" value="{{this.publishedAt}}">
-                                    <input type="hidden" name="articleDescription" value="{{this.description}}">
-                                    <input type="hidden" name="articleUrl" value="{{this.url}}">
-                                    <input type="hidden" name="articleImageUrl" value="{{this.urlToImage}}">
-                                    <input type="hidden" name="articleSource" value="{{../sourceDetails.id}}">
-                                    <input type="hidden" name="userName" value="{{../../username}}">
-                                    <input type="hidden" name="user_id" value="{{../../user_id}}">
-                                    {{!-- <input type="hidden" name="article" value="{{this.title}}"> --}}
-                               
-                                    <button type="submit" class="btn btn-primary" data-toggle="tooltip" title="Add To Read">Add To Read List!</button>             
+                                    {{#if ../../logged_in}}
+                                        <form class="form-inline" style="display:inline;" action="/articles/create" method="POST">
+                                            <input type="hidden" name="articleTitle" value="{{this.title}}">
+                                            <input type="hidden" name="articleAuthor" value="{{this.author}}">
+                                            <input type="hidden" name="articlePublishedAt" value="{{this.publishedAt}}">
+                                            <input type="hidden" name="articleDescription" value="{{this.description}}">
+                                            <input type="hidden" name="articleUrl" value="{{this.url}}">
+                                            <input type="hidden" name="articleImageUrl" value="{{this.urlToImage}}">
+                                            <input type="hidden" name="articleSource" value="{{../sourceDetails.id}}">
+                                            <input type="hidden" name="userName" value="{{../../username}}">
+                                            <input type="hidden" name="user_id" value="{{../../user_id}}">{{!-- <input type="hidden" name="article" value="{{this.title}}
+                                            "> --}}
+
+                                    <button type=" submit " class="btn btn-primary " data-toggle="tooltip " title="Add To Read ">Add To Read List!</button>
                                 </form>
                                 {{/if}}
                             </div>
                             <hr>
                         </div>
                         {{/each}}
-                    {{/each}}           
+                    {{/each}}
 
             </div>
         </div>
-    <div class="col-sm-6 col-md-4">
-        <div class="row">
-        <div class="col-md-12">
-                 <div class="well text-center">
+    <div class="col-sm-6 col-md-4 ">
+        <div class="row ">
+        <div class="col-md-12 ">
+                 <div class="well text-center ">
                     {{#if logged_in}}
                     <h3>Welcome : {{email}}</h3>
                     <hr>
-                    <a href="/users/sign-out" class="btn btn-warning"> Sign Out </a>
-                    {{/if}} 
+                    <a href="/users/sign-out " class="btn btn-warning "> Sign Out </a>
+                    {{/if}}
                     {{#unless logged_in}}
                     {{> loginForm}}
-                    {{/unless}}       
-                </div>                
+                    {{/unless}}
+                </div>
             </div>
-            <div class="col-md-12">
-                 <div class="well">
-                    {{#each articlesbysource}}                        
+            <div class="col-md-12 ">
+                 <div class="well ">
+                    {{#each articlesbysource}}
                          <a href="/news/{{this.sourceDetails.id}}/{{this.sourceDetails.sortBysAvailable.[0]}}">
-                            <img src="{{this.sourceDetails.urlsToLogos.small}}" class="img-responsive img-hover center-align-img"> 
-                         </a>
-                         <hr>
-                    {{/each}}              
-                </div>                
+                                                <img src="{{this.sourceDetails.urlsToLogos.small}}" class="img-responsive img-hover center-align-img">
+                                                </a>
+                                                <hr>
+                    {{/each}}
+                    </div>
             </div>
         </div>
     </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-

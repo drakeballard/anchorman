@@ -33,8 +33,8 @@ router.get('/news/:category', function(req,res) {
         searchCategory = "";
     }
     console.log("LOGGED IN VAL============================================== "+ logged_in);
-	
-	news.getNews(searchCategory, function(data){	  
+
+	news.getNews(searchCategory, function(data){
 	  res.render('articles/articles', {
 	  	articlesbysource: data,
 	  	logged_in: logged_in,
@@ -86,13 +86,13 @@ router.get('/news/:category/:language/:country', function(req,res){
 
 
 	if (category=="all") {
-		category = "";	
+		category = "";
 	}
 	if (language=="all") {
-		language = "";	
+		language = "";
 	}
 	if (country=="all") {
-		country = "";	
+		country = "";
 	}
 
 	news.getSourceList(category, language, country, function(result){

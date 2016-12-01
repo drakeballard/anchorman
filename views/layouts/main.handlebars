@@ -25,10 +25,8 @@ Here is the main HTML where handlebars will render to
 </head>
 
 <body>
-	{{> pageHeader }}
-	
-	{{{ body }}}
-	
+	{{> pageHeader }} {{{ body }}}
+
 
 	<!-- jQuery -->
 	<script src="/assets/js/jquery.js"></script>
@@ -38,13 +36,12 @@ Here is the main HTML where handlebars will render to
 
 	<!-- Script to Activate the Carousel -->
 	<script>
-	$(document).ready(function(){
-    	$('[data-toggle="tooltip"]').tooltip(); 
-    	$('.carousel').carousel({
-			interval: 5000 //changes the speed
+		$(document).ready(function() {
+			$('[data-toggle="tooltip"]').tooltip();
+			$('.carousel').carousel({
+				interval: 5000 //changes the speed
+			});
 		});
-	});
-		
 	</script>
 </body>
 

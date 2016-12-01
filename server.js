@@ -6,14 +6,14 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser'); // for working with cookies
 var bodyParser = require('body-parser');
-var session = require('express-session'); 
+var session = require('express-session');
 var methodOverride = require('method-override'); // for deletes in express
 
 var debug = require('debug')('sburger');
 
 
 
-// Our model controllers 
+// Our model controllers
 var application_controller = require('./controllers/application_controller');
 var articles_controller = require('./controllers/articles_controller');
 var users_controller = require('./controllers/users_controller');
@@ -28,7 +28,14 @@ var app = express();
 app.use(methodOverride('_method'))
 
 //allow sessions
-app.use(session({ secret: 'app', resave: true, saveUninitialized: true, cookie: { maxAge: 6000000 } }));
+app.use(session({
+    secret: 'app',
+    resave: true,
+    saveUninitialized: true,
+    cookie: {
+        maxAge: 6000000
+    }
+}));
 app.use(cookieParser());
 
 // view engine setup
@@ -45,7 +52,9 @@ app.set('view engine', 'handlebars');
 //app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({
+    extended: false
+}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -55,37 +64,37 @@ app.use('/articles', articles_controller);
 app.use('/users', users_controller);
 
 // we bring in the models we exported with index.js
- var models = require("./models");
+var models = require("./models");
 
 // we set the port of the app
 app.set('port', process.env.PORT || 3000);
 
-// we sync the models with our db 
+// we sync the models with our db
 // (thus creating the apropos tables)
-models.sequelize.sync().then(function () {
-	// set our app to listen to the port we set above
+models.sequelize.sync().then(function() {
+    // set our app to listen to the port we set above
     app.listen(app.get('port'), function() {
-    // then save a log of the listening to our debugger.
-    debug('Express server listening on port ' + this.address().port);
-  });
+        // then save a log of the listening to our debugger.
+        debug('Express server listening on port ' + this.address().port);
+    });
 });
 
-// Test News API 
+// Test News API
 
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
+    var err = new Error('Not Found');
+    err.status = 404;
+    next(err);
 });
 
 // error handler
 // no stacktraces leaked to user unless in development environment
 app.use(function(err, req, res, next) {
-  res.status(err.status || 500);
-  res.render('error', {
-    message: err.message,
-    error: (app.get('env') === 'development') ? err : {}
-  })
+    res.status(err.status || 500);
+    res.render('error', {
+        message: err.message,
+        error: (app.get('env') === 'development') ? err : {}
+    })
 });

@@ -15,4 +15,3 @@ CREATE TABLE articles
     yesno BOOLEAN DEFAULT false,
 	PRIMARY KEY (id)
 );
-
