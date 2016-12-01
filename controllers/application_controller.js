@@ -14,15 +14,17 @@ res.render('articles/articlesByCategory');
 router.get('/news/:category', function(req,res) {
 
 	var searchCategory = req.params.category;
+    var logged_in = req.session.logged_in;
+
 		if (searchCategory == "all"){
         searchCategory = "";
     }
-
-	news.getNews(searchCategory, function(data){
-	  // console.log(data);
+    console.log("LOGGED IN VAL============================================== "+ logged_in);
+	
+	news.getNews(searchCategory, function(data){	  
 	  res.render('articles/articles', {
 	  	articlesbysource: data,
-	  	logged_in : req.session.logged_in
+	  	logged_in: logged_in
 	  });
 	});
 
