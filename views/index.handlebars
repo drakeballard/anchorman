@@ -39,7 +39,13 @@
                                     <hr>
                         
                         <p>{{this.description}}</p>
-                        <a class="btn btn-primary" href="{{this.articleUrl}}">Read More <i class="fa fa-angle-right"></i></a>
+                        <hr>
+                        <div class="inline-form">
+                            <a class="btn btn-primary" href="{{this.articleUrl}}">Read More <i class="fa fa-angle-right"></i></a>
+                            <form class="inline-form" style="display:inline;" action="/articles/delete/{{this.id}}?_method=DELETE" method="POST">  
+                              <button type="submit" class="btn btn-danger">DELETE!</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
         {{/each}}

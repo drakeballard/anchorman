@@ -8,8 +8,13 @@ models.Article.findAll({
 	where:{
 		user_id : req.session.user_id
 	},
+  // order: [createdAt, 'DESC']
+
 	include: [ models.User ]
  }).then (function(articles){
+
+  console.log(articles);
+
  	res.render('index',{
       user_id: req.session.user_id,
       email: req.session.user_email,
@@ -22,13 +27,7 @@ models.Article.findAll({
 
 router.post('/create', function (req, res) {
 
-console.log("---------------------------------INSIDE CREATE----------------------"+req.body.articleSource)
-// console.log("-------------------------------------------------------"+req.body.articleAuthor)
-// console.log("-------------------------------------------------------"+req.body.articleTitle)
-// console.log("-------------------------------------------------------"+req.body.articleDescription)
-// console.log("-------------------------------------------------------"+req.body.articleUrl)
-// console.log("-------------------------------------------------------"+req.body.articleImageUrl)
-// console.log("-------------------------------------------------------"+req.body.articlePublishedAt)  
+console.log("---------------------------------INSIDE CREATE----------------------");  
 
   
   models.Article.create({
@@ -42,6 +41,22 @@ console.log("---------------------------------INSIDE CREATE---------------------
     publishedAt: req.body.articlePublishedAt,
     user_id: req.session.user_id
   }).then(function(){
+    res.redirect('/articles');
+  })
+});
+
+router.delete('/delete/:id', function(req,res) {
+  // SOLUTION:
+  // =========
+  // use the Cat model to delete a cat
+  // based on the id passed in the url
+  models.Article.destroy({
+    where: {
+      id: req.params.id
+    }
+  })
+  // connect it to this .then.
+  .then(function() {
     res.redirect('/articles');
   })
 });
