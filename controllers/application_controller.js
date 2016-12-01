@@ -7,7 +7,17 @@ router.get('/', function(req, res) {
 res.render('home');
 });
 router.get('/news', function(req, res) {
-res.render('articles/articlesByCategory');
+	var logged_in = req.session.logged_in;
+    var userName = req.session.username;
+    var user_id = req.session.user_id;
+    var userEmail = req.session.user_email;
+res.render('articles/articlesByCategory', {
+		logged_in: logged_in,
+	  	userName: userName,
+	  	user_id: user_id,
+	  	email: userEmail
+});
+
 });
 
 
@@ -68,6 +78,13 @@ router.get('/news/:category/:language/:country', function(req,res){
 	var category = req.params.category;
 	var language = req.params.language;
 	var country = req.params.country;
+
+	var logged_in = req.session.logged_in;
+    var userName = req.session.username;
+    var user_id = req.session.user_id;
+    var userEmail = req.session.user_email;
+
+
 	if (category=="all") {
 		category = "";	
 	}
@@ -80,7 +97,13 @@ router.get('/news/:category/:language/:country', function(req,res){
 
 	news.getSourceList(category, language, country, function(result){
 		// console.log(result);
-		res.render('sources/sourceList', {sourceList: result});
+		res.render('sources/sourceList', {
+			sourceList: result,
+			logged_in: logged_in,
+		  	userName: userName,
+		  	user_id: user_id,
+		  	email: userEmail
+		});
 	});
 });
 
