@@ -11,8 +11,7 @@
             </div>
         </div>
 {{#each articlesList.articles}}
-        <div class="row blog-item-row">
-            
+        <div class="row blog-item-row">            
             <div class="col-md-6">
                 <a href="{{this.url}}">
                     <img class="img-responsive img-hover" src="{{this.urlToImage}}" alt="">
@@ -32,7 +31,27 @@
                             <hr>
                 
                 <p>{{this.description}}</p>
-                <a class="btn btn-primary" href="{{this.url}}">Read More <i class="fa fa-angle-right"></i></a>
+                <div class="form-inline">
+                    <a class="btn btn-primary" href="{{this.url}}">Read More <i class="fa fa-angle-right"></i></a>
+                     {{#unless ../logged_in}}
+                                        <a href="/users/sign-in" class="btn btn-primary" data-toggle="tooltip" title="Sign In Or Sign Up First To">Add To Read List!</a>
+                    {{/unless}}  
+                    {{#if ../logged_in}} 
+                    <form class="form-inline" style="display:inline;" action="/articles/create" method="POST">  
+                    <input type="hidden" name="articleTitle" value="{{this.title}}">
+                    <input type="hidden" name="articleAuthor" value="{{this.author}}">
+                    <input type="hidden" name="articlePublishedAt" value="{{this.publishedAt}}">
+                    <input type="hidden" name="articleDescription" value="{{this.description}}">
+                    <input type="hidden" name="articleUrl" value="{{this.url}}">
+                    <input type="hidden" name="articleImageUrl" value="{{this.urlToImage}}">
+                    <input type="hidden" name="userName" value="{{../username}}">
+                    <input type="hidden" name="user_id" value="{{../user_id}}">
+                    <input type="hidden" name="userName" value="{{../articlesList.source}}">
+                        <button type="submit" class="btn btn-primary" data-toggle="tooltip" title="Add To Read">Add To Read List!</button>  
+                    </form>               
+                    {{/if}}
+                </div>
+                <hr>
             </div>
         </div>
 {{/each}}
