@@ -34,45 +34,60 @@
                             </ul>
                             <hr>
                             <p>{{this.description}}</p>
-                            <a class="btn btn-primary" href="{{this.url}}"> Read More <i class="fa fa-angle-right"></i></a>
-                             {{#unless ../logged_in}}
-                                <a href="/users/sign-in" class="btn btn-primary" data-toggle="tooltip" title="Sign In Or Sign Up First To ">Add To Read List!</a>
-                             {{/unless}}  
-                            {{#if ../logged_in}} 
-                            <form class="form-inline" action="articles/create" method="POST">
-                                <input type="hidden" name="articleTitle" value="{{this.title}}">
-                                <input type="hidden" name="articleAuthor" value="{{this.author}}">
-                                <input type="hidden" name="articlePublishedAt" value="{{this.publishedAt}}">
-                                <input type="hidden" name="articleDescription" value="{{this.description}}">
-                                <input type="hidden" name="articleUrl" value="{{this.url}}">
-                                <input type="hidden" name="articleImageUrl" value="{{this.urlToImage}}">
-                                <input type="hidden" name="articleSource" value="{{../sourceDetails.id}}">
-                                <input type="hidden" name="article" value="{{this.title}}">
-                                <input type="hidden" name="article" value="{{this.title}}">
-                                <input type="hidden" name="article" value="{{this.title}}">                                                                      
-                                <button type="submit" class="btn btn-default">Add To Read List!</button>
-                               {{/if}}   
+                            <div class="form-inline">
+                                <a class="btn btn-primary" href="{{this.url}}"> Read More <i class="fa fa-angle-right"></i></a>
+                                 {{#unless ../../logged_in}}
+                                    <a href="/users/sign-in" class="btn btn-primary" data-toggle="tooltip" title="Sign In Or Sign Up First To ">Add To Read List!</a>
+                                 {{/unless}}  
 
+                                {{#if ../../logged_in}} 
+                                <form class="form-inline" style="display:inline;" action="articles/create" method="POST">
                                
-                            </form>
-                            <hr>
+                                    <input type="hidden" name="articleTitle" value="{{this.title}}">
+                                    <input type="hidden" name="articleAuthor" value="{{this.author}}">
+                                    <input type="hidden" name="articlePublishedAt" value="{{this.publishedAt}}">
+                                    <input type="hidden" name="articleDescription" value="{{this.description}}">
+                                    <input type="hidden" name="articleUrl" value="{{this.url}}">
+                                    <input type="hidden" name="articleImageUrl" value="{{this.urlToImage}}">
+                                    <input type="hidden" name="articleSource" value="{{../sourceDetails.id}}">
+                                    <input type="hidden" name="article" value="{{this.title}}">
+                                    <input type="hidden" name="article" value="{{this.title}}">
+                                    <input type="hidden" name="article" value="{{this.title}}">
+                               
+                                    <button type="submit" class="btn btn-primary" data-toggle="tooltip" title="Add To Read">Add To Read List!</button>             
+                                </form>
+                                {{/if}}
+                            </div>
+                                <hr>
                         </div>
                         {{/each}}
                     {{/each}}           
 
             </div>
         </div>
-        <div class="col-sm-6 col-md-4">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="well">
+    <div class="col-sm-6 col-md-4">
+        <div class="row">
+        <div class="col-md-12">
+                 <div class="well text-center">
+                    {{#if logged_in}}
+                    <h3>Welcome : {{email}}</h3>
+                    <hr>
+                    <a href="/users/sign-out" class="btn btn-warning"> Sign Out </a>
+                    {{/if}} 
+                    {{#unless logged_in}}
+                    {{> loginForm}}
+                    {{/unless}}       
+                </div>                
+            </div>
+            <div class="col-md-12">
+                 <div class="well">
                     {{#each articlesbysource}}                        
                          <a href="/news/{{this.sourceDetails.id}}/{{this.sourceDetails.sortBysAvailable.[0]}}">
                             <img src="{{this.sourceDetails.urlsToLogos.small}}" class="img-responsive img-hover center-align-img"> 
                          </a>
                          <hr>
                     {{/each}}              
-                </div>
+                </div>                
             </div>
         </div>
     </div>

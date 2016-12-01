@@ -14,15 +14,23 @@ res.render('articles/articlesByCategory');
 router.get('/news/:category', function(req,res) {
 
 	var searchCategory = req.params.category;
-		if (searchCategory == "all"){
+    var logged_in = req.session.logged_in;
+    var userName = req.session.username;
+    var user_id = req.session.user_id;
+    var userEmail = req.session.user_email;
+
+	if (searchCategory == "all"){
         searchCategory = "";
     }
-
-	news.getNews(searchCategory, function(data){
-	  // console.log(data);
+    console.log("LOGGED IN VAL============================================== "+ logged_in);
+	
+	news.getNews(searchCategory, function(data){	  
 	  res.render('articles/articles', {
 	  	articlesbysource: data,
-	  	logged_in : req.session.logged_in
+	  	logged_in: logged_in,
+	  	userName: userName,
+	  	user_id: user_id,
+	  	email: userEmail
 	  });
 	});
 
