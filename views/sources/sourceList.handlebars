@@ -1,11 +1,11 @@
 <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header">Source List
-                  
-                </h1>       
-            </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Source List
+
+                </h1>
         </div>
+    </div>
 
 
     <div class="row">
@@ -18,25 +18,25 @@
                         </h3>
                         <p>{{this.description}}</p>
                     </div>
-                 {{/each}}
+                {{/each}}
             </div>
         </div>
-         <div class="col-sm-6 col-md-4">
+        <div class="col-sm-6 col-md-4">
             <div class="row">
-                 <div class="col-md-12">
-                 <div class="well text-center">
-                   {{#if logged_in}}
-                    <h3>Welcome <br> {{email}}</h3>
-                    <hr>
-                    <a href="/users/sign-out" class="btn btn-warning"> Sign Out </a>
-                    {{/if}} 
-                    {{#unless logged_in}}
-                    {{> loginForm}}
-                    {{/unless}}   
-                </div>    
+                <div class="col-md-12">
+                    <div class="well text-center">
+                        {{#if logged_in}}
+                            <h3>Welcome <br> {{email}}</h3>
+                            <hr>
+                            <a href="/users/sign-out" class="btn btn-warning"> Sign Out </a>
+                        {{/if}}
+                        {{#unless logged_in}}
+                            {{> loginForm}}
+                        {{/unless}}
+                    </div>
                 </div>
                 <div class="col-md-12">
-                {{> searchGrid }}
+                    {{> searchGrid }}
                 </div>
             </div>
         </div>
