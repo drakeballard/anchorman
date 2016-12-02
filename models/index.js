@@ -9,6 +9,7 @@ var config = require(path.join(__dirname, '..', 'config', 'config.json'))[env];
 // var config    = require(__dirname + '/../config/config.json')[env];
 var db = {};
 
+
 // config.use_env_variable
 
 if (env !== 'development') {
