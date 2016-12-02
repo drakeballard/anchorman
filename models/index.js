@@ -10,7 +10,7 @@ var config = require(path.join(__dirname, '..', 'config', 'config.json'))[env];
 var db = {};
 
 // config.use_env_variable
-
+// dont mess with this code here
 if (env !== 'development') {
   console.log('using production env');
     var sequelize = new Sequelize("mysql://kom08p8cjiyb56h0:cub9two8ohpt7adh@tkck4yllxdrw0bhi.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/bvnr602qmk6zvft2");
