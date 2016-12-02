@@ -13,8 +13,8 @@ var db = {};
 
 if (true) {
   console.log('using production env');
-  console.log(config);
-    var sequelize = new Sequelize(process.env[config.use_env_variable]);
+  //console.log(config);
+    var sequelize = new Sequelize(process.env["JawsDB_URL"]);
 } else {
   console.log('using local env');
     var sequelize = new Sequelize(config.database, config.username, config.password, config);
