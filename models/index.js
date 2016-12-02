@@ -11,7 +11,8 @@ var db = {};
 
 // config.use_env_variable
 
-if (true) {
+if (env !== 'development') {
+  console.log('using production env');
     var sequelize = new Sequelize("mysql://kom08p8cjiyb56h0:cub9two8ohpt7adh@tkck4yllxdrw0bhi.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/bvnr602qmk6zvft2");
 } else {
   console.log('using local env');
