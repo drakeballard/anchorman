@@ -48,8 +48,9 @@ app.engine('handlebars', exphbs({
 }));
 app.set('view engine', 'handlebars');
 
-// uncomment after placing your favicon in /public
+
 //app.use(favicon(__dirname + '/public/favicon.ico'));
+// use bodyparser for request parsing
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -63,13 +64,13 @@ app.use('/', application_controller);
 app.use('/articles', articles_controller);
 app.use('/users', users_controller);
 
-// we bring in the models we exported with index.js
+// include models
 var models = require("./models");
 
-// we set the port of the app
+// set the port of the app
 app.set('port', process.env.PORT || 3000);
 
-// we sync the models with our db
+//sync the models with our db
 // (thus creating the apropos tables)
 models.sequelize.sync().then(function() {
     // set our app to listen to the port we set above
