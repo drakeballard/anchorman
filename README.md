@@ -9,14 +9,12 @@ Newsroom Anchorman is an editorial news site that acts as a single point of sour
   - Washington Post
   - Economist
   - LA/NY Times
-  - Youtube
   - CNBC
   - BBC
-  - NPR
+  - Etc.
 
 
-## The application will have two separate users:
-  - Editor
+## The application will be operated via a single user:
   - Readers
 
 
@@ -26,20 +24,11 @@ Newsroom Anchorman is an editorial news site that acts as a single point of sour
     - Sign-up
     - Create Read List
     - View their List
-    - Sort list based categories and date
+
 -  Non-Members:
     - read the news as they like
 
-### Admin
-- Chief Editors:
-    -   Approve story lines
-    -   Remove stories
-    -   Add Story Lines
-    -   Manager Editors
-- Editors
--   Post stories for approval
-
-
+### Technology
 
 ### Team Members:
 - Manali Matkar
