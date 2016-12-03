@@ -24,7 +24,7 @@
 
                             <h2><a href="{{this.url}}">{{this.title}}</a></h2>
                             <hr>
-                            <a href="{{this.url}}">
+                            <a href="{{this.url}}" target="_blank">
                                 <img class="img-responsive img-hover center-align-img " src="{{this.urlToImage}}" alt="">
                             </a>
                             <hr>
@@ -40,8 +40,10 @@
                             <hr>
                             <p>{{this.description}}</p>
                             <div class="form-inline ">
-                                <a class="btn btn-primary " href="{{this.url}}"> Read More <i class="fa fa-angle-right"></i></a>
+
+                                <a class="btn btn-primary " href="{{this.url}}" target="_blank"> Read More <i class="fa fa-angle-right"></i></a>
                                 {{!--route user to sign in, if not logged in --}}
+
                                     {{#unless ../../logged_in}}
                                         <a href="/users/sign-in" class="btn btn-primary" data-toggle="tooltip" title="Sign In Or Sign Up First To">Add To Read List!</a>
                                     {{/unless}}
