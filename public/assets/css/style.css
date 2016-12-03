@@ -12,17 +12,26 @@
     text-align: center;
     color: white;
 
-
-/*.thumbnail {
-    border: 0 none;
-    box-shadow: none;
-    margin: 0;
-    padding: 0;
-}*/
-
+}
 .newcaption h4 {
     color: #fff;
     font-size: 25px;
     font-weight: bold;
     -webkit-font-smoothing: antialiased;
+}
+
+/*.footerwrap {
+  background-color: #373a3c;
+}*/
+
+footer, #block {
+	background-color: #080808;
+	color: #fff;
+	padding: 0px;
+	clear: both;
+	border-top: 8px solid #4aaaa5;
+	color: #ccc;
+	font-size: 12px;
+	text-align: center;
+  margin: 0px;
 }
