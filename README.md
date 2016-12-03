@@ -1,9 +1,9 @@
 # Newsroom Anchorman
 
 
-Newsroom Anchorman is an editorial news site that acts as a single point of contact that accumulates different news feeds and posts under our application. The problem that it will solve is to have many reliant news sources in one panel.
+Newsroom Anchorman is an editorial news site that acts as a single point of source that accumulates different news feeds and posts under our application. The problem that it will solve is to have many reliant news sources in one panel.
 
-## We will be using the following news sources below:
+## Our Newsroom Anchorman App will be using the following news sources below and various others:
   - CNN
   - CNBC
   - Washington Post

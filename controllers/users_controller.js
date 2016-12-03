@@ -1,22 +1,34 @@
-var bcrypt = require('bcryptjs');
+// including Dependencies
+var bcrypt = require('bcryptjs'); //package used to encrypt the password
 var models = require('../models');
 var express = require('express');
 var router = express.Router();
 
+//route to driect user to sign up
 router.get('/new', function(req, res) {
-    res.render('users/newuser');
-});
+    // if user is logged in redirect to articles root
+    if (req.session.logged_in == true) {
+        res.redirect('/articles')
 
+    } else {
+        // render signup form
+        res.render('users/newuser');
+    }
+});
+// routes  to sign in,
 router.get('/sign-in', function(req, res) {
+    //if user is logged in redirect him to articles root
     if (req.session.logged_in == true) {
         res.redirect('/articles')
     } else {
+        // render the login form
         res.render('users/signin');
     }
 
 });
-
+// route for sign out
 router.get('/sign-out', function(req, res) {
+    // destrou current session and redirect to all top news for all sources
     req.session.destroy(function(err) {
         res.redirect('/news/all')
     })
@@ -24,12 +36,13 @@ router.get('/sign-out', function(req, res) {
 
 // login
 router.post('/login', function(req, res) {
+    // find user with current email address
     models.User.findOne({
         where: {
             email: req.body.email
         }
     }).then(function(user) {
-
+        // if user does not exist, redirect them to sign up page
         if (user == null) {
             res.redirect('/users/sign-in')
         }
@@ -40,14 +53,10 @@ router.post('/login', function(req, res) {
         bcrypt.compare(req.body.password, user.pwdHash, function(err, result) {
             // if the result is true (and thus pass and hash match)
             if (result == true) {
-
                 // save the user's information
-                // to req.session, as the comments below show
-
-                // so what's happening here?
-                // we enter the user's session by setting properties to req.
-
-                // we save the logged in status to the session
+                // to req.session,
+                // enter the user's session by setting properties to req.
+                // save the logged in status to the session
                 req.session.logged_in = true;
                 // the username to the session
                 console.log("INSIDE LOGIN " + user.userName);
@@ -56,7 +65,7 @@ router.post('/login', function(req, res) {
                 req.session.user_id = user.id;
                 // and the user's email.
                 req.session.user_email = user.email;
-
+                //save user session and redirect to article root to display artciles saved by user
                 res.redirect('/articles');
             }
             // if the result is anything but true (password invalid)
@@ -71,12 +80,13 @@ router.post('/login', function(req, res) {
 
 // register a user
 router.post('/create', function(req, res) {
+    // check if current user email address already exists
     models.User.findAll({
         where: {
             email: req.body.email
         }
     }).then(function(users) {
-
+        // if user exists, send response user exists
         if (users.length > 0) {
             console.log(users)
             res.send('we already have an email or username for this account')
@@ -94,16 +104,12 @@ router.post('/create', function(req, res) {
                             userName: req.body.username,
                             pwdHash: hash
                         })
-                        // In a .then promise connected to that create method,
+
                         // save the user's information to req.session
-                        // as shown in these comments
+
                         .then(function(user) {
 
-
-
-                            // we enter the user's session by setting properties to req.
-
-                            // we save the logged in status to the session
+                            //save the logged in status to the session
                             req.session.logged_in = true;
                             // the username to the session
                             req.session.username = user.userName;
@@ -112,7 +118,7 @@ router.post('/create', function(req, res) {
                             // and the user's email.
                             req.session.user_email = user.email;
 
-                            // redirect to home on login
+                            // redirect to article root to display saved articles for user
                             res.redirect('/articles')
                         })
                 })

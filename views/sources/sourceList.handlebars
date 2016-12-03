@@ -1,4 +1,5 @@
 <div class="container">
+  {{!-- Page Header --}}
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">Source List
@@ -9,6 +10,7 @@
 
 
     <div class="row">
+      {{!--left column for source list--}}
         <div class="col-sm-6 col-md-8">
             <div class="row">
                 {{#each sourceList.sources}}
@@ -21,7 +23,9 @@
                 {{/each}}
             </div>
         </div>
+        {{!--right side bar --}}
         <div class="col-sm-6 col-md-4">
+
             <div class="row">
                 <div class="col-md-12">
                     <div class="well text-center">
@@ -36,6 +40,7 @@
                     </div>
                 </div>
                 <div class="col-md-12">
+                  {{!-- Search Grid Partial --}}
                     {{> searchGrid }}
                 </div>
             </div>

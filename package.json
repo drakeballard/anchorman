@@ -34,10 +34,9 @@
     "method-override": "^2.3.7",
     "morgan": "^1.7.0",
     "mysql": "^2.12.0",
-    "request": "^2.79.0",
+    "news-api-njs": "git+https://github.com/drakeballard/news-api.git",
     "sequelize": "^3.27.0",
     "sequelize-cli": "^2.4.0",
-    "serve-favicon": "^2.3.2",
-    "request-promise-native": "^1.0.3"
+    "serve-favicon": "^2.3.2"
   }
 }

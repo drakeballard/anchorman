@@ -1,17 +1,17 @@
 <div class="container">
 
+        {{!-- Top heading row --}}
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Welcome To Newsroom Anchorman!!           
-                </h1>       
+                <h1 class="page-header">Welcome To Newsroom Anchorman!!
+                </h1>
             </div>
         </div>
-
-
-
     <div class="row">
+      {{!--left side column for category grid--}}
         <div class="col-sm-6 col-md-8">
             <div class="row">
+              {{!--Category Grid Partial --}}
                 {{> categoryGrid}}
             </div>
         </div>
@@ -19,9 +19,11 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="well text-center">
+                      {{!--if user is logged in welcome message and user account will appear --}}
                         {{#if logged_in}}
                             <h3>Welcome <br> {{email}}</h3>
                             <hr>
+                            {{!-- sign out option --}}
                             <a href="/users/sign-out" class="btn btn-warning"> Sign Out </a>
                         {{/if}}
                         {{#unless logged_in}}
