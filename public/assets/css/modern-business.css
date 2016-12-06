@@ -24,6 +24,10 @@ body {
 h2{
   padding: 10px;
 }
+h1{
+    padding: 20px;
+    text-align: center;
+}
 
 .img-portfolio {
     margin-bottom: 30px;
@@ -216,4 +220,7 @@ footer, #block {
     font-size: 12px;
     text-align: center;
  margin:0px;
+}
+.well-form{
+    margin:10px;
 }

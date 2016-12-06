@@ -2,7 +2,7 @@
     "apiKey": "d6a3a16f8af948a3b1d1f59d21663512",
     "development": {
         "username": "root",
-        "password": null,
+        "password": "monalisa79",
         "database": "anchorman_db",
         "host": "127.0.0.1",
         "dialect": "mysql"

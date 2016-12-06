@@ -5,11 +5,11 @@
             <h1 class="page-header">
                     Top News
                 </h1>
-            <ol class="breadcrumb">
+           {{!--  <ol class="breadcrumb">
                 <li><a href="/news/all">News Search </a>
                 </li>
                 <li class="active">{{articlesbysource.[0].category}}</li>
-            </ol>
+            </ol> --}}
         </div>
     </div>
     {{!--content row --}}
@@ -20,7 +20,7 @@
                 {{#each articlesbysource}}
                     {{#each this.articlesList.articles}}
                     {{!-- article block --}}
-                        <div class="col-md-12 blog-item">
+                        <div class="col-md-12 well">
 
                             <h2><a href="{{this.url}}">{{this.title}}</a></h2>
                             <hr>
