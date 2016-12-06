@@ -21,8 +21,17 @@ body {
     padding-top: 50px;
     /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
 }
+div{
+    word-wrap: break-word;
+}
 h2{
   padding: 10px;
+  word-wrap: break-word;
+}
+h1{
+    padding: 20px;
+    text-align: center;
+    word-wrap: break-word;
 }
 
 .img-portfolio {
@@ -216,4 +225,7 @@ footer, #block {
     font-size: 12px;
     text-align: center;
  margin:0px;
+}
+.well-form{
+    margin:10px;
 }

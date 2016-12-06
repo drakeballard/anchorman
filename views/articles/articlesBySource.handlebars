@@ -4,17 +4,17 @@
         <div class="col-lg-12">
             <h1>{{articlesList.source}}
                 </h1>
-            <ol class="breadcrumb">
+            {{!-- <ol class="breadcrumb">
                 <li><a href="/news">Search News</a> : {{articlesList.source}}
                 </li>
                 <li class="active">{{articlesList.sortBy}} news</li>
-            </ol>
+            </ol> --}}
         </div>
     </div>
 
     {{!--row for each article --}}
     {{#each articlesList.articles}}
-        <div class="row blog-item-row">
+        <div class="row well">
             <div class="col-md-6">
                 <a href="{{this.url}}">
                     <img class="img-responsive img-hover" src="{{this.urlToImage}}" alt="">
