@@ -24,7 +24,6 @@ Newsroom Anchorman is an editorial news site that acts as a single point of sour
     - Sign-up
     - Create Read List
     - View their List
-
 -  Non-Members:
     - read the news as they like
 
