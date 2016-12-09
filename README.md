@@ -38,3 +38,5 @@ Newsroom Anchorman is an editorial news site that acts as a single point of sour
 - Manali Matkar
 - Ed Reynolds
 - Drake Ballard
+
+# [Installation Guide](https://github.com/drakeballard/anchorman/blob/master/instructions.md)
