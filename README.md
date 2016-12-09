@@ -1,5 +1,7 @@
 # [Newsroom Anchorman](https://calm-wildwood-45974.herokuapp.com/)
-![alt-text](https://s-media-cache-ak0.pinimg.com/236x/56/ae/a6/56aea68427d0fed65b0753f9bd080610.jpg)
+
+![alt tag] (https://github.com/drakeballard/anchorman/raw/master/public/assets/img/TeamNewsRoom-Anchorman.png)
+
 
 Newsroom Anchorman is an editorial news site that acts as a single point of source that accumulates different news feeds and posts under our application. The problem that it will solve is to have many reliant news sources in one panel.
 
